@@ -18,6 +18,7 @@ var gulp           = require('gulp'),
 gulp.task('scripts', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
+		'app/libs/slick-carousel/slick/slick.min.js',
 		'app/js/common.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
@@ -58,7 +59,7 @@ gulp.task('watch', ['sass', 'scripts', 'browser-sync'], function() {
 gulp.task('imagemin', function() {
 	return gulp.src('app/img/**/*')
 	.pipe(cache(imagemin()))
-	.pipe(gulp.dest('dist/img')); 
+	.pipe(gulp.dest('dist/img'));
 });
 
 gulp.task('build', ['removedist', 'imagemin', 'sass', 'scripts'], function() {
