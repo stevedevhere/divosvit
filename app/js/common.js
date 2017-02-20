@@ -1,43 +1,44 @@
 window.onload = function(){
 
 
-  var LatLng = {lat: 49.4436973, lng: 32.0304895}; // NOTE: put here true cords
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: LatLng,
-    zoom: 15,
-    scrollwheel: false
-  });
-
-  google.maps.event.addListener(map, 'click', function (event) {
-    this.setOptions({
-        draggable: true,
-        scrollwheel: true
+  var contacts_page = document.getElementById("contacts-page");
+  if(contacts_page) {
+    var LatLng = {lat: 49.4436973, lng: 32.0304895};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: LatLng,
+      zoom: 14,
+      scrollwheel: false
     });
-    var m = this;
-    setTimeout(function () {
-        m.setOptions({
-            draggable: false,
-            scrollwheel: false
-        });
-    }, 3000);
-	});
-
-	google.maps.event.addListener(map, 'mouseout', function (event) {
-    this.setOptions({
-        draggable: false,
-        scrollwheel: false
+    google.maps.event.addListener(map, 'click', function (event) {
+      this.setOptions({
+          draggable: true,
+          scrollwheel: true
+      });
+      var m = this;
+      setTimeout(function () {
+          m.setOptions({
+              draggable: false,
+              scrollwheel: false
+          });
+      }, 3000);
+  	});
+  	google.maps.event.addListener(map, 'mouseout', function (event) {
+      this.setOptions({
+          draggable: false,
+          scrollwheel: false
+      });
+  	});
+  	google.maps.event.addListenerOnce(map, 'idle', function() {
+      google.maps.event.trigger(map, 'resize');
+  	});
+    var marker = new google.maps.Marker({
+      position: LatLng,
+      map: map,
+      icon: "http://shtory-decor.com.ua/wp-content/themes/decor/img/contacts/marker.png"
     });
-	});
 
-	google.maps.event.addListenerOnce(map, 'idle', function() {
-    google.maps.event.trigger(map, 'resize');
-	});
+  }
 
-  var marker = new google.maps.Marker({
-    position: LatLng,
-    map: map,
-    icon: "http://shtory-decor.com.ua/wp-content/themes/decor/img/contacts/marker.png"
-  });
 
 
   $('.slider').slick({
