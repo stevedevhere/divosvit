@@ -2,6 +2,43 @@ window.onload = function(){
 
 
   var contacts_page = document.getElementById("contacts-page");
+  var mfp_use = document.querySelector(".mfp");
+
+  if (mfp_use) {
+
+    $('.portf-popup').click(function() {
+      var gallery_ID = $(this).attr('data-mfp-src');
+      console.log(gallery_ID);
+      switch(gallery_ID) {
+        case "#restor-eidel":
+          $(".re-item")[0].click();
+          break;
+
+        case "#cafe-mont":
+          $(".cm-item")[0].click();
+          break;
+
+        case "#restor-forest":
+          $(".rf-item")[0].click();
+          break;
+
+      }
+      $(".restor-eidel-item")[0].click();
+    });
+
+    $('.gallery').each(function() { // the containers for all your galleries
+      $(this).magnificPopup({
+        delegate: 'img', // the selector for gallery item
+        type: 'image',
+        gallery: {
+          enabled:true
+        },
+        // overflowY: auto
+      });
+    });
+
+  }
+
   if(contacts_page) {
     var LatLng = {lat: 49.4436973, lng: 32.0304895};
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -38,7 +75,6 @@ window.onload = function(){
     });
 
   }
-
 
 
   $('.slider').slick({
