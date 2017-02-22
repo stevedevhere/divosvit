@@ -2,9 +2,20 @@ window.onload = function(){
 
 
   var contacts_page = document.getElementById("contacts-page");
-  var mfp_use = document.querySelector(".mfp");
+  var mfp_use = document.querySelector(".mfp-hide");
 
   if (mfp_use) {
+    $('.popup-letter-opener').magnificPopup({
+      type: "inline"
+    });
+
+    $('.popup-schedule-opener').magnificPopup({
+      type: "inline"
+    });
+
+    $('.popup-PD-info-opener').magnificPopup({
+      type: "inline"
+    });
 
     $('.portf-popup').click(function() {
       var gallery_ID = $(this).attr('data-mfp-src');
@@ -30,6 +41,7 @@ window.onload = function(){
       $(this).magnificPopup({
         delegate: 'img', // the selector for gallery item
         type: 'image',
+        closeMarkup: '<button title="%title%" type="button" class="mfp-close gallery-close">&#215;</button>',
         gallery: {
           enabled:true
         },
@@ -40,10 +52,10 @@ window.onload = function(){
   }
 
   if(contacts_page) {
-    var LatLng = {lat: 49.4436973, lng: 32.0304895};
+    var LatLng = {lat: 49.8142883, lng: 24.0590634}; //49.8142883,24.0590634
     var map = new google.maps.Map(document.getElementById('map'), {
       center: LatLng,
-      zoom: 14,
+      zoom: 17,
       scrollwheel: false
     });
     google.maps.event.addListener(map, 'click', function (event) {
@@ -69,9 +81,8 @@ window.onload = function(){
       google.maps.event.trigger(map, 'resize');
   	});
     var marker = new google.maps.Marker({
-      position: LatLng,
-      map: map,
-      icon: "http://shtory-decor.com.ua/wp-content/themes/decor/img/contacts/marker.png"
+      position: {lat: 49.814157, lng: 24.0633276},
+      map: map
     });
 
   }

@@ -5,7 +5,7 @@
 
 	<meta charset="utf-8">
 
-	<title>Каталог</title>
+	<title>Продукт</title>
 	<meta name="description" content="">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,7 +26,7 @@
 
 </head>
 
-<body id="contacts-page">
+<body id="product-page">
 
 	<div id="wrapper">
 
@@ -45,10 +45,10 @@
 					</div>
 					<div class="right">
 						<div class="socials">
-							<i class="fa fa-facebook"></i>
-							<i class="fa fa-twitter"></i>
-							<i class="fa fa-google-plus"></i>
-							<i class="fa fa-instagram"></i>
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#"><i class="fa fa-google-plus"></i></a>
+							<a href="#"><i class="fa fa-instagram"></i></a>
 						</div>
 					</div>
 				</div>
@@ -59,33 +59,33 @@
 						<a href="/"><img src="img/logo.png" alt="Logo"></a>
 					</div>
 					<ul>
-						<li><a href="#">Про компанію</a></li>
+						<li><a href="/about.html">Про компанію</a></li>
 						<li class="dropdown">
-							<a href="#">Отельєрам</a>
+							<a href="/hotelier.html">Отельєрам</a>
 							<ul>
-								<li><a href="#">Каталоги продукції</a></li>
-								<li><a href="#">Протфоліо рішень</a></li>
-								<li><a href="#">Корисна информація</a></li>
+								<li><a href="/hotelier.html#catalog-p">Каталоги продукції</a></li>
+								<li><a href="/hotelier.html#portfolio-p">Протфоліо рішень</a></li>
+								<li><a href="/hotelier.html#news">Корисна информація</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#">Рестораторам</a>
+							<a href="/restaurateurs.html">Рестораторам</a>
 							<ul>
-								<li><a href="#">Каталоги продукції</a></li>
-								<li><a href="#">Протфоліо рішень</a></li>
-								<li><a href="#">Корисна информація</a></li>
+								<li><a href="/restaurateurs.html#catalog-p">Каталоги продукції</a></li>
+								<li><a href="/restaurateurs.html#portfolio-p">Протфоліо рішень</a></li>
+								<li><a href="/restaurateurs.html#news">Корисна информація</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#">Професіоналам</a>
+							<a href="/professionals.html">Професіоналам</a>
 							<ul>
-								<li><a href="#">Каталоги продукції</a></li>
-								<li><a href="#">Протфоліо рішень</a></li>
-								<li><a href="#">Корисна информація</a></li>
+								<li><a href="/professionals.html#catalog-p">Каталоги продукції</a></li>
+								<li><a href="/professionals.html#portfolio-p">Протфоліо рішень</a></li>
+								<li><a href="/professionals.html#news">Корисна информація</a></li>
 							</ul>
 						</li>
-						<li><a href="#">Новини</a></li>
-						<li><a href="#">Контакти</a></li>
+						<li><a href="/news.html">Новини</a></li>
+						<li><a href="/contacts.html">Контакти</a></li>
 					</ul>
 					<div id="locale">
 						<a class="active" href="#">Ua</a>
@@ -96,117 +96,93 @@
 			</div>
 		</header>
 
-		<section class="jbtron">
+		<section id="first">
 			<div class="container">
-				<div class="content">
-					<div class="text">
-						<h2 class="left-align">Дозатори ADA</h2>
-						<p class="description small-desc">
-							An intelligent as well as progressive concept: our dispenser solutions for hotels.
-							More than 30 years ago, ADA Cosmetics International developed the first dispenser system
-							for the hotel bathroom and spa. And we are still full of good ideas.
-							<br><br>
-							Today we can offer our customers concepts that incorporate technological
-							convenience along with economical and ecological benefits in one modern product design.
-							This is where we make a difference – to your hotel as well.
+				<div class="row">
+					<div class="col-lg-12 col-lg-offset-1">
+						<div class="product-images">
+							<img src="img/product.png" alt="" class="big-preview">
+							<div class="small-preview">
+								<img src="img/product.png" alt="">
+								<img src="img/product.png" alt="">
+								<img src="img/product.png" alt="">
+							</div>
+						</div>
+						<div class="product-info">
+							<p class="prod-title">Косметические наборы для гостиниц с логотипом</p>
+							<div class="small-order-descr">
+								<span>Под заказ, 120 дней</span>
+								<span>|</span>
+								<span>Только оптом</span></p>
+						</div>
+						<p class="prod-descr">
+							Наборы для гостиниц с логотипом: мини-косметика, набор для бритья,
+							набор для полости рта, швейный набор, косметический набор, шапочка для душа.
 						</p>
+						<div class="prod-info-popups flex">
+							<div class="item"><a href="#" class="popup-PD-info-opener" data-mfp-src="#popup-PD-info">Умови оплати і доставки</a></div>
+							<div class="item"><a href="#" class="popup-schedule-opener" data-mfp-src="#popup-schedule">Графік работи і контакти</a></div>
+						</div>
+						<div class="action flex">
+							<div class="item">
+								<p class="description">Оптові ціни уточнюйте</p>
+							</div>
+							<div class="item"><button class="popup-letter-opener" data-mfp-src="#popup-letter">Написати</button></div>
+						</div>
 					</div>
-					<img src="img/res-intro.png" alt="">
+				</div>
+			</div>
+		</section>
+		<section id="charts">
+			<h2>Характеристики</h2>
+			<div class="container">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="table">
+						<div class="flex horizontal-border">
+							<div class="item">
+								<p class="chart-title">Производитель</p>
+							</div>
+							<div class="item">
+								<p class="chart-info">Собственное производство</p>
+							</div>
+						</div>
+						<div class="flex">
+							<div class="item">
+								<p class="chart-title">Страна производитель</p>
+							</div>
+							<div class="item">
+								<p class="chart-info">Украина</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<section id="catalog">
+		<section class="s-products">
+			<h2><span>Подібні</span> Товари</h2>
 			<div class="container">
 				<div class="row">
-					<div class="flex">
-						<div class="item">
-							<a href="#">
+					<div class="flex products">
+						<div class="item"><a href="#">
 								<img src="img/product.png" alt="">
 								<p class="description">Косметические наборы для гостиниц с логотипом</p>
-							</a>
-						</div>
-						<div class="item">
-							<a href="#">
+							</a></div>
+						<div class="item"><a href="#">
 								<img src="img/product.png" alt="">
 								<p class="description">Косметические наборы для гостиниц с логотипом</p>
-							</a>
-						</div>
-						<div class="item">
-							<a href="#">
+							</a></div>
+						<div class="item"><a href="#">
 								<img src="img/product.png" alt="">
 								<p class="description">Косметические наборы для гостиниц с логотипом</p>
-							</a>
-						</div>
-						<div class="item">
-							<a href="#">
+							</a></div>
+						<div class="item"><a href="#">
 								<img src="img/product.png" alt="">
 								<p class="description">Косметические наборы для гостиниц с логотипом</p>
-							</a>
-						</div>
-						<div class="item">
-							<a href="#">
-								<img src="img/product.png" alt="">
-								<p class="description">Косметические наборы для гостиниц с логотипом</p>
-							</a>
-						</div>
-						<div class="item">
-							<a href="#">
-								<img src="img/product.png" alt="">
-								<p class="description">Косметические наборы для гостиниц с логотипом</p>
-							</a>
-						</div>
-						<div class="item">
-							<a href="#">
-								<img src="img/product.png" alt="">
-								<p class="description">Косметические наборы для гостиниц с логотипом</p>
-							</a>
-						</div>
-						<div class="item">
-							<a href="#">
-								<img src="img/product.png" alt="">
-								<p class="description">Косметические наборы для гостиниц с логотипом</p>
-							</a>
-						</div>
-						<div class="item">
-							<a href="#">
-								<img src="img/product.png" alt="">
-								<p class="description">Косметические наборы для гостиниц с логотипом</p>
-							</a>
-						</div>
-						<div class="item">
-							<a href="#">
-								<img src="img/product.png" alt="">
-								<p class="description">Косметические наборы для гостиниц с логотипом</p>
-							</a>
-						</div>
-						<div class="item">
-							<a href="#">
-								<img src="img/product.png" alt="">
-								<p class="description">Косметические наборы для гостиниц с логотипом</p>
-							</a>
-						</div>
-						<div class="item">
-							<a href="#">
-								<img src="img/product.png" alt="">
-								<p class="description">Косметические наборы для гостиниц с логотипом</p>
-							</a>
-						</div>
-					</div>
-
-					<div class="pagination">
-						<a href="#">1</a>
-						<a href="#">2</a>
-						<a href="#">3</a>
-						<p class="sep">...</p>
-						<a href="#">6</a>
-						<a href="#">7</a>
-						<a href="#">8</a>
+							</a></div>
 					</div>
 				</div>
 			</div>
-
-
 		</section>
 
 		<footer id="footer">
@@ -218,45 +194,119 @@
 				<div class="flex">
 					<div class="item">
 						<h2>Контакти:</h2>
-						<a href="#">+380 - 32 - 240 - 51 - 04</a>
-						<a href="#">+380 - 67 - 676 - 61 - 67</a>
-						<a href="#">bs@dyvosvit.biz</a>
+						<a href="tel:">+380 - 32 - 240 - 51 - 04</a>
+						<a href="tel:">+380 - 67 - 676 - 61 - 67</a>
+						<a href="mailto:">bs@dyvosvit.biz</a>
 					</div>
 					<div class="item">
 						<h2 class="hide">hidden</h2>
 						<ul>
-							<li><a href="#">Про компанію</a></li>
-							<li><a href="#">Новини</a></li>
+							<li><a href="/about.html">Про компанію</a></li>
+							<li><a href="/news.html">Новини</a></li>
 							<li><a href="#">Акції</a></li>
 						</ul>
 					</div>
 					<div class="item">
 						<h2>Отельєрам:</h2>
 						<ul>
-							<li><a href="#">Каталоги продукції</a></li>
-							<li><a href="#">Портфоліо рішень</a></li>
-							<li><a href="#">Корисна інформація</a></li>
+							<li><a href="/hotelier.html#catalog-p">Каталоги продукції</a></li>
+							<li><a href="/hotelier.html#portfolio-p">Портфоліо рішень</a></li>
+							<li><a href="/hotelier.html#news">Корисна інформація</a></li>
 						</ul>
 					</div>
 					<div class="item">
 						<h2>Рестораторам:</h2>
 						<ul>
-							<li><a href="#">Каталоги продукції </a></li>
-							<li><a href="#">Портфоліо рішень</a></li>
-							<li><a href="#">Корисна інформація</a></li>
+							<li><a href="/restaurateurs.html#catalog-p">Каталоги продукції </a></li>
+							<li><a href="/restaurateurs.html#portfolio-p">Портфоліо рішень</a></li>
+							<li><a href="/restaurateurs.html#news">Корисна інформація</a></li>
 						</ul>
 					</div>
 					<div class="item">
 						<h2>Професіоналам:</h2>
 						<ul>
-							<li><a href="#">Каталоги продукції</a></li>
-							<li><a href="#">Портфоліо рішень</a></li>
-							<li><a href="#">Корисна інформація</a></li>
+							<li><a href="/professionals.html#catalog-p">Каталоги продукції</a></li>
+							<li><a href="/professionals.html#portfolio-p">Портфоліо рішень</a></li>
+							<li><a href="/professionals.html#news">Корисна інформація</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</footer>
+
+		<div id="popup-letter" class="col-lg-6 col-lg-offset-3 prod-popup mfp-hide">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 popup-content">
+						<p class="popup-title">Косметические наборы для гостиниц с логотипом</p>
+						<p class="description">Задайте вопрос продавцу</p>
+						<form action="#" id="form-letter">
+							<input type="text" name="name" placeholder="Ваше ім’я" required>
+							<input type="tel" name="tel" class="right" placeholder="Номер телефону" required>
+							<textarea name="message" placeholder="Повідомлення" required></textarea>
+							<button type="submit" name="submit">Відправити</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="popup-PD-info" class="col-lg-6 col-lg-offset-3 prod-popup mfp-hide">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 popup-content popup-paddings">
+						<p class="descr">Доставка осуществляется только по предоплате.</p>
+
+						<p class="descr bold">Телефоны:</p>
+						<p class="descr">+38 (050) 317-22-72</p>
+						<p class="descr">+38 (032) 240-51-04</p>
+
+						<p class="descr bold">Контактное лицо:</p>
+						<p class="descr">Мар'яна</p>
+
+						<p class="descr bold">Адрес:</p>
+						<p class="descr">Украина, Львовская область, Львов, ул. Зеленая, 147</p>
+
+						<p class="descr bold">Время работы:</p>
+						<p class="descr">С 9 до 18 часов без выходных</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="popup-schedule" class="col-lg-6 col-lg-offset-3 prod-popup mfp-hide">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 popup-content popup-paddings">
+
+						<p class="descr">Доставка осуществляется только по предоплате.</p>
+
+						<p class="descr bold">Способы доставки:</p>
+						<p class="descr">- Самовывоз</p>
+						<p class="descr">- Транспортная компания</p>
+						<p class="descr">- Нова Пошта</p>
+						<p class="descr">- Почтоматы Приватбанка</p>
+
+						<p class="descr bold">Способы оплаты:</p>
+						<p class="descr">- Безналичный расчет</p>
+						<p class="descr">- Наложенный платеж</p>
+
+						<p class="descr bold">НДС, %: 20</p>
+
+						<p class="descr bold">Регионы доставки:</p>
+						<p class="descr">- Во все регионы Украины</p>
+						<p class="descr">- Луганская область:</p>
+						<p class="descr descr-pl">Алчевск</p>
+						<p class="descr descr-pl">Луганск</p>
+						<p class="descr descr-pl">Лисичанск</p>
+						<p class="descr descr-pl">Стаханов</p>
+						<p class="descr descr-pl">Хрустальный</p>
+						<p class="descr descr-pl">Северодонецк</p>
+
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</div>
 

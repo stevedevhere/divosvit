@@ -44,7 +44,6 @@ body
 h2
 	font-family: "Magistral"
 	font-weight: normal
-
 .img-responsive
 	display: block
 	max-width: 100%
@@ -114,7 +113,8 @@ header
 			.right
 				float: right
 				.socials
-					.fa
+					a
+						color: #24211e
 						font-size: 11px
 						&:not(:first-child)
 							padding-left: 22px
@@ -164,6 +164,7 @@ header
 
 section
 	h2
+		margin: 0 !important
 		font-size: 36px
 		text-transform: uppercase
 		color: #5d503c
@@ -171,6 +172,9 @@ section
 			padding-top: 60px
 			padding-bottom: 40px
 			text-align: center
+		&.n-title
+			font-size: 20px
+			padding: 10px 0
 		span
 			color: #b69b71
 
@@ -180,6 +184,26 @@ section
 	display: flex
 	align-items: center
 	justify-content: center
+
+.flex.products
+	justify-content: space-between
+	flex-flow: wrap
+	.item
+		transition: 0.05s
+		width: 270px
+		margin-bottom: 30px
+		padding-bottom: 25px
+		text-align: center
+		border: solid 5px #f6f3e4
+		&:hover
+			border: solid 5px $accent
+			color: $accent
+		.description
+			font-size: 1em
+			line-height: normal
+			padding: 0 26px
+		a
+			color: inherit
 
 p
 	span
@@ -197,6 +221,79 @@ textarea
 button
 	height: 40px
 
+form
+	input
+		width: 49%
+		&.right
+			float: right
+	textarea
+		height: 160px
+		margin-top: 10px
+		width: 100%
+	button
+		display: table
+		margin: auto
+		width: 220px
+		color: #fff
+		font-size: 15px
+		border-color: #BFA664
+		background-color: #BFA664
+		&:hover
+			background-color: #998553
+			border-color: #998553
+		&:active
+			background-color: transparent
+			color: #BFA664
+
+
+.mfp-close
+	color: #fff!important
+	opacity: 1 !important
+	font-size: 100px
+	top: -27px
+	right: 15px
+	transition: 0.1s
+	&.gallery-close
+    position: fixed
+    right: 30px
+    top: 30px !important
+	&:hover
+		color: #ccc !important
+	&:active
+		top: -20px
+.prod-popup
+	.popup-content
+		background-color: #fff
+		padding: 0
+		padding-bottom: 30px
+		&.popup-paddings
+			padding: 30px
+		.popup-title
+			font-family: "DINPro Bold"
+			font-size: 18px
+			color: #000 !important
+			line-height: normal
+			margin: 0 !important
+			padding: 20px
+			background-color: #f6f3e4
+		.description
+			padding: 0 30px
+			font-family: "DINPro Bold"
+			font-size: 1em
+			color: #000
+		.descr
+			color: #000
+			line-height: normal
+			margin: 0
+			font-size: 1em
+			font-family: "DINPro Regular"
+			&.descr-pl
+				padding-left: 17px
+			&.bold
+				font-family: "DINPro Bold"
+				margin-top: 17px
+		form
+			padding: 0 30px
 .pattern-bg
 	background-image: url("../img/pattern50.png")
 input, textarea, button
@@ -273,12 +370,26 @@ input, textarea, button
 		.post
 			display: table
 			&-image
-				box-sizing: initial
+				position: relative
 				border-radius: 50%
-				height: 125px
-				width: 125px
 				float: left
-				border: solid 25px #f9f9f9
+				img
+					box-sizing: initial
+					height: 125px
+					width: 125px
+					border-radius: 50%
+					border: solid 25px transparent
+				&::before
+					z-index: -1
+					content: ""
+					top: 0
+					left: 0
+					display: table
+					width: 175px
+					height: 175px
+					border-radius: 50%
+					background-image: url("../img/pattern50.png")
+					position: absolute
 			&-text
 				padding-left: 25px
 				vertical-align: middle
@@ -300,30 +411,8 @@ input, textarea, button
 	.description
 		font-size: 1em
 		font-family: "DINPro Regular"
-	form
-		input
-			width: 49%
-			&.right
-				float: right
-		textarea
-			height: 160px
-			margin-top: 10px
-			width: 100%
-		button
-			display: table
-			margin: auto
-			width: 220px
-			color: #fff
-			font-size: 15px
-			border-color: #BFA664
-			background-color: #BFA664
-			&:hover
-				background-color: #998553
-				border-color: #998553
-			&:active
-				background-color: transparent
-				color: #BFA664
-	.col-lg-8
+
+
 
 #footer
 	margin-top: 65px
@@ -332,7 +421,7 @@ input, textarea, button
 	background-image: url("../img/pattern50.png")
 	.stx
 		margin-top: 65px
-		margin-right: 75px
+		// margin-right: 75px
 		float: left
 		.logo
 			display: inline-table
@@ -527,23 +616,7 @@ input, textarea, button
 		color: inherit
 	.container
 		padding-top: 55px
-	.flex
-		justify-content: space-between
-		flex-flow: wrap
-		.item
-			transition: 0.05s
-			width: 270px
-			margin-bottom: 30px
-			padding-bottom: 25px
-			text-align: center
-			border: solid 5px #f6f3e4
-			&:hover
-				border: solid 5px $accent
-				color: $accent
-			.description
-				font-size: 1em
-				line-height: normal
-				padding: 0 26px
+
 	.pagination
 		margin: auto
 		display: table
@@ -551,5 +624,119 @@ input, textarea, button
 			display: inline-table
 			margin: 20px 9px
 
+#product-page
+	#first
+		padding-top: 55px
+		padding-bottom: 28px
+		.container,
+		.col-lg-12
+			overflow: hidden
+		.product-images
+			display: inline-table
+			float: left
+			width: 22%
+			margin-right: 70px
+			.small-preview
+				display: -webkit-flex
+				display: -ms-flex
+				display: flex
+				justify-content: space-between
+				margin-top: 10px
+			img
+				height: 75px
+				border: solid 1px #f6f3e4
+			.big-preview
+				border: solid 5px #f6f3e4
+				width: 100%
+				height: auto
+		.product-info
+			width: 83%
+			box-sizing: border-box
+			padding-top: 20px
+			color: #5d503c
+			.prod-title
+				font-size: 22px
+				font-family: "DINPro Bold"
+				line-height: normal
+				margin: 0
+			.small-order-descr
+				margin-top: 10px
+				span
+					&:not(:first-child)
+						margin: 0 15px
+					&:first-child
+						margin-right: 15px
+			.prod-descr
+				font-size: 1em
+				font-family: "DINPro Regular"
+				line-height: normal
+				color: #24211e
+			.prod-info-popups
+				margin-top: 40px
+				margin-bottom: 20px
+				border-bottom: solid 1px
+				border-top: solid 1px
+				border-color: #edeff1
+				padding: 15px
+				.item
+					width: 50%
+					padding: 0 4px
+					text-align: center
+					&:first-child
+						border-right: solid 1px #edeff1
+					a
+						color: $accent
+						font-family: "DINPro Regular"
+						font-size: 1em
+			.action
+				&.flex
+					justify-content: space-between
+				.item
+					margin: 10px 30px
+					button
+						height: 50px
+						width: 185px
+						background-color: $accent
+						color: #fff
+						border: none
+						border-radius: 25px
+	#charts
+		padding-bottom: 45px
+		background-image: url("../img/pattern50.png")
+		h2
+			font-size: 24px
+			color: #5d503c
+		.table
+			.flex
+				&.horizontal-border
+					border-bottom: solid 1px $accent
+				.item
+					width: 68%
+					padding-left: 20px
+					&:first-child
+						width: 32%
+						border-right: solid 1px $accent
+					&:last-child
+						// padding-left: 30px
 
+#single-newspage
+	#single-news
+		padding-top: 45px
+		.forward
+			color: $accent
+			font-size: 1em
+			display: table
+			margin: 0 auto
+			font-family: "Magistral"
+		.post-content
+			img
+				margin: auto
+				margin-bottom: 20px
+			&-text
+				&::before
+					content: ""
+					width: 17px
+					height: 3px
+					float: left
+					display: table
 @import "media" // Всегда в конце
