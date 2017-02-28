@@ -18,7 +18,7 @@
 
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 
-	<title><?php bloginfo('title'); ?></title>
+	<title><?php bloginfo('name') . wp_title(); ?></title>
 	<meta name="description" content="">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,7 +39,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body id="homepage" <?php body_class(); ?>>
+<body <?php body_class(); ?>>
 
 	<div id="wrapper">
 
@@ -49,19 +49,19 @@
 					<div class="left">
 						<div class="item">
 							<img src="<?=get_template_directory_uri();?>/img/icon-inbox.png" alt="icon inbox">
-							<a href="mailto:bs@divosvit.biz">bs@divosvit.biz</a>
+							<a class="no-locale" href="mailto:bs@divosvit.biz">bs@divosvit.biz</a>
 						</div>
 						<div class="item">
 							<img src="<?=get_template_directory_uri();?>/img/icon-phone.png" alt="con phone">
-							<a href="tel:+380322405104">+380 - 32 - 240 - 51 - 04</a>
+							<a class="no-locale" href="tel:+380322405104">+380 - 32 - 240 - 51 - 04</a>
 						</div>
 					</div>
 					<div class="right">
 						<div class="socials">
-							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-google-plus"></i></a>
-							<a href="#"><i class="fa fa-instagram"></i></a>
+							<a class="no-locale" href="#"><i class="fa fa-facebook"></i></a>
+							<a class="no-locale" href="#"><i class="fa fa-twitter"></i></a>
+							<a class="no-locale" href="#"><i class="fa fa-google-plus"></i></a>
+							<a class="no-locale" href="#"><i class="fa fa-instagram"></i></a>
 						</div>
 					</div>
 				</div>
@@ -73,11 +73,11 @@
 						<a href="<?=site_url(); ?>/"><img src="<?=get_template_directory_uri();?>/img/logo.png" alt="Logo"></a>
 					</div>
 					<?php wp_nav_menu(); ?>
-					
+
 					<div id="locale">
-						<a class="active" href="/">Ua</a>
-						<a href="/ru">Rus</a>
-						<a href="/en">Eng</a>
+						<a class="no-locale ua" href="/">Ua</a>
+						<a class="no-locale ru" href="/ru">Rus</a>
+						<a class="no-locale en" href="/en">Eng</a>
 					</div>
 				</nav>
 			</div>

@@ -9,39 +9,24 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_single() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+<section id="single-news">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 n-content">
+				<a href="/news" class="forward"><?php the_field('news-forward', 5); ?></a>
+				<!-- <h2 class="n-title">Підписано дистрибуційну угоду з Cali’ Cosmetics, Inc. (США)</h2> -->
+				<?php
+				if ( is_single() ) :
+					the_title( '<h2 class="n-title">', '</h2>' );
+				endif;
+				?>
+				<div class="post-content">
+					 <?php the_post_thumbnail('', array('class' => 'img-responsive')); ?>
+					<p><?=get_field("post-content");?></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php divosvit_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'divosvit' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'divosvit' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php divosvit_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+<?php include(get_template_directory() . '/news-bar.php'); ?>

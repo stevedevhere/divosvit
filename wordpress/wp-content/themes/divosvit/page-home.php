@@ -7,8 +7,7 @@
 			<div class="text decorator">
 				<h2 class="left-align"><?=get_field('banner-name');?></h2>
 				<p class="description">
-					Якість та інновації в привабливому дизайні
-					<span>ADA Cosmetics</span>
+					<?php the_field('home-description') ?>
 				</p>
 			</div>
 		</div>
@@ -19,25 +18,25 @@
 </div>
 
 <section class="presentation">
-	<h2><span>Наші</span> рішення</h2>
+	<h2><?php the_field('solutions-section-title'); ?></h2>
 	<div class="container">
 		<div class="flex">
 			<div class="item">
-				<a href="<?=site_url();?>/restaurateurs.html">
+				<a href="<?=site_url();?>/restaurateurs">
 					<img src="<?=get_template_directory_uri(); ?>/img/restaurateurs.png" alt="" class="img-responsive">
-					<p class="title">Рестораторам</p>
+					<p class="title"><?php the_field('restor-title'); ?></p>
 				</a>
 			</div>
 			<div class="item">
-				<a href="<?=site_url();?>/hoteliers.html">
+				<a href="<?=site_url();?>/hoteliers">
 					<img src="<?=get_template_directory_uri(); ?>/img/hoteliers.png" alt="" class="img-responsive">
-					<p class="title">Отельєрам</p>
+					<p class="title"><?php the_field('hotel-title'); ?></p>
 				</a>
 			</div>
 			<div class="item">
-				<a href="<?=site_url();?>/professionals.html">
+				<a href="<?=site_url();?>/professionals">
 					<img src="<?=get_template_directory_uri(); ?>/img/professionals.png" alt="" class="img-responsive">
-					<p class="title">Професіоналам</p>
+					<p class="title"><?php the_field('prof-title'); ?></p>
 				</a>
 			</div>
 		</div>
@@ -45,38 +44,29 @@
 </section>
 
 <section id="news">
-	<h2><span>Новини</span> компанії</h2>
+	<h2><?php the_field('news-title'); ?></h2>
 	<div class="container">
 		<div class="flex">
-			<div class="item">
-				<a href="#"><img src="<?=get_template_directory_uri(); ?>/img/news-1.png" alt="" class="img-responsive"></a>
-				<p class="description">Підписано дистрибуційну угоду з Cali’ Cosmetics, Inc.</p>
-			</div>
-			<div class="item">
-				<a href="#"><img src="<?=get_template_directory_uri(); ?>/img/news-2.png" alt="" class="img-responsive"></a>
-				<p class="description">Акційні ціни на ADA Green Collection до 8 березня</p>
-			</div>
+		<?php	$recent_posts = wp_get_recent_posts(['numberposts' => 2, 'post_type' => 'post']);
+			foreach( $recent_posts as $recent ):
+				$post_id = get_the_ID();
+				if($recent["ID"] == $post_id) continue;
+					?>
+					<div class="item">
+						<a href="<?php the_permalink($recent['ID']); ?>">
+							<?=get_the_post_thumbnail($recent["ID"], '', array("class"=>"img-responsive")); ?>
+							<p class="description"><?=$recent['post_title']; ?></p>
+						</a>
+					</div>
+			<?php
+			endforeach;
+			?>
 		</div>
 	</div>
 </section>
 
-<section id="brands">
-	<h2><span>Бренди</span> з якими працюємо</h2>
-	<div class="container">
-		<div class="slider">
-			<img src="<?=get_template_directory_uri(); ?>/img/brands/1.png">
-			<img src="<?=get_template_directory_uri(); ?>/img/brands/2.png">
-			<img src="<?=get_template_directory_uri(); ?>/img/brands/3.png">
-			<img src="<?=get_template_directory_uri(); ?>/img/brands/4.png">
-			<img src="<?=get_template_directory_uri(); ?>/img/brands/5.png">
-			<img src="<?=get_template_directory_uri(); ?>/img/brands/1.png">
-			<img src="<?=get_template_directory_uri(); ?>/img/brands/2.png">
-			<img src="<?=get_template_directory_uri(); ?>/img/brands/3.png">
-			<img src="<?=get_template_directory_uri(); ?>/img/brands/4.png">
-			<img src="<?=get_template_directory_uri(); ?>/img/brands/5.png">
-		</div>
-	</div>
-</section>
+
+<?php include("brands.php") ?>
 
 
 <?php get_footer(); ?>

@@ -1,38 +1,28 @@
 
 <?php get_header(); ?>
-
-<section class="jbtron">
-	<div class="container">
-		<div class="content">
-			<div class="text">
-				<h2 class="left-align">Рестораторам</h2>
-				<p class="description">Наші рішення для рестораторів</p>
-			</div>
-			<img src="<?=get_template_directory_uri();?>/img/res-intro.png" alt="">
-		</div>
-	</div>
-</section>
+<?php // TODO: content! ?>
+<?php require_once('solution-jbtron.php'); ?>
 
 <section class="presentation" id="catalog-p">
-	<h2><span>Каталоги</span> Продукції</h2>
+	<h2><?php the_field('cat-section-title', 5); ?></h2>
 	<div class="container">
 		<div class="flex">
 			<div class="item">
-				<a href="<?=site_url();?>/catalog">
+				<a href="<?=site_url();?>/catalog/prod-dozator-ada">
 					<img src="<?=get_template_directory_uri();?>/img/cat-1.png" alt="" class="img-responsive">
-					<p class="title">Дозаторы ADA</p>
+					<p class="title"><?=get_category_by_slug('prod-dozator-ada')->name;?></p>
 				</a>
 			</div>
 			<div class="item">
-				<a href="<?=site_url();?>/catalog">
+				<a href="<?=site_url();?>/catalog/prod-ada-bc">
 					<img src="<?=get_template_directory_uri();?>/img/cat-2.png" alt="" class="img-responsive">
-					<p class="title">ADA Brand Collection</p>
+					<p class="title"><?=get_category_by_slug('prod-ada-bc')->name;?></p>
 				</a>
 			</div>
 			<div class="item">
-				<a href="<?=site_url();?>/catalog">
+				<a href="<?=site_url();?>/catalog/prod-ada-gc">
 					<img src="<?=get_template_directory_uri();?>/img/cat-3.png" alt="" class="img-responsive">
-					<p class="title">ADA Green Collection</p>
+					<p class="title"><?=get_category_by_slug('prod-ada-gc')->name;?></p>
 				</a>
 			</div>
 		</div>
@@ -40,7 +30,7 @@
 </section>
 
 <section class="presentation pattern-bg" id="portfolio-p">
-	<h2><span>Портфоліо</span> Рішень</h2>
+	<h2><?php the_field('portf-section-title', 5); ?></h2>
 	<div class="container">
 		<div class="flex">
 			<div class="item">
@@ -68,22 +58,7 @@
 	</div>
 </section>
 
-<section id="news" class="no-bg">
-	<h2><span>Корисна</span> Інформація</h2>
-	<div class="container">
-		<div class="flex">
-			<div class="item">
-				<a href="#"><img src="<?=get_template_directory_uri();?>/img/news-1.png" alt="" class="img-responsive"></a>
-				<p class="description">Підписано дистрибуційну угоду з Cali’ Cosmetics, Inc.</p>
-			</div>
-			<div class="item">
-				<a href="#"><img src="<?=get_template_directory_uri();?>/img/news-2.png" alt="" class="img-responsive"></a>
-				<p class="description">Акційні ціни на ADA Green Collection до 8 березня</p>
-			</div>
-		</div>
-	</div>
-</section>
-
+<?php include('news-bar.php'); ?>
 
 <!-- POP-UPs Start -->
 <div id="restor-eidel" class="gallery mfp-hide">

@@ -195,19 +195,31 @@ section
 	.item
 		transition: 0.05s
 		width: 270px
+		height: 348px
 		margin-bottom: 30px
 		padding-bottom: 25px
 		text-align: center
 		border: solid 5px #f6f3e4
+
 		&:hover
 			border: solid 5px $accent
 			color: $accent
 		.description
-			font-size: 1em
-			line-height: normal
-			padding: 0 26px
+	    font-size: 1em
+	    line-height: normal
+	    padding: 0 26px
+	    position: absolute
+	    display: table
+	    margin: auto
+	    bottom: 0
+	    width: 100%
 		a
 			color: inherit
+			margin: auto
+			display: table
+			width: 100%
+			height: 100%
+			position: relative
 
 p
 	span
@@ -332,25 +344,24 @@ input, textarea, button
 					margin: 0
 					font-family: "Magistral"
 
-#about-page
-	#about
-		.text
-			font-family: "DINPro Regular"
-			font-size: 1em
-			&::before
-				content: ""
-				width: 17px
-				height: 3px
-				float: left
-				display: table
-		ul
-			margin: 5px
-			margin-left: 20px
-			margin-bottom: 25px
-			li
-				// line-height: 1.25em
-				padding: 0
-				padding-left: 15px
+#about
+	p
+		font-family: "DINPro Regular"
+		font-size: 1em
+		&::before
+			content: ""
+			width: 17px
+			height: 3px
+			float: left
+			display: table
+	ul
+		margin: 5px
+		margin-left: 20px
+		margin-bottom: 25px
+		li
+			// line-height: 1.25em
+			padding: 0
+			padding-left: 15px
 
 #all-news
 	.pagination
@@ -372,7 +383,10 @@ input, textarea, button
 			margin: 10px
 			box-sizing: border-box
 		.post
+			width: 730px
 			display: table
+			margin: 16px auto
+			color: initial
 			&-image
 				position: relative
 				border-radius: 50%
@@ -398,7 +412,7 @@ input, textarea, button
 				padding-left: 25px
 				vertical-align: middle
 				display: table-cell
-				max-width: 500px
+				width: inherit
 				line-height: normal
 				&-excerpt
 					font-size: 1.1em
@@ -422,6 +436,7 @@ input, textarea, button
 	margin-top: 65px
 	height: 250px
 	width: 100%
+	display: table
 	background-image: url("../img/pattern50.png")
 	.stx
 		margin-top: 65px
@@ -490,44 +505,43 @@ input, textarea, button
 			&::before
 				content: " "
 
-#homepage
-	.banner
-		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e6e6e6+0,e6e6e6+77&1+41,0+52,0+52 */
-		background: -moz-linear-gradient(left,  rgba(230,230,230,1) 0%, rgba(230,230,230,1) 41%, rgba(230,230,230,0) 52%, rgba(230,230,230,0) 77%)
-		background: -webkit-linear-gradient(left,  rgba(230,230,230,1) 0%,rgba(230,230,230,1) 41%,rgba(230,230,230,0) 52%,rgba(230,230,230,0) 77%)
-		background: linear-gradient(to right,  rgba(230,230,230,1) 0%,rgba(230,230,230,1) 41%,rgba(230,230,230,0) 52%,rgba(230,230,230,0) 77%)
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#00e6e6e6',GradientType=1 )
+.banner
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e6e6e6+0,e6e6e6+77&1+41,0+52,0+52 */
+	background: -moz-linear-gradient(left,  rgba(230,230,230,1) 0%, rgba(230,230,230,1) 41%, rgba(230,230,230,0) 52%, rgba(230,230,230,0) 77%)
+	background: -webkit-linear-gradient(left,  rgba(230,230,230,1) 0%,rgba(230,230,230,1) 41%,rgba(230,230,230,0) 52%,rgba(230,230,230,0) 77%)
+	background: linear-gradient(to right,  rgba(230,230,230,1) 0%,rgba(230,230,230,1) 41%,rgba(230,230,230,0) 52%,rgba(230,230,230,0) 77%)
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#00e6e6e6',GradientType=1 )
 
-		.flex
-			height: 450px
-			.item
-				height: inherit
-				width: 50%
-				display: table
-				.text
-					position: relative
-					width: 100%
-					display: table-cell
-					vertical-align: middle
-					padding-left: 100px
+	.flex
+		height: 450px
+		.item
+			height: inherit
+			width: 50%
+			display: table
+			.text
+				position: relative
+				width: 100%
+				display: table-cell
+				vertical-align: middle
+				padding-left: 100px
 
-					h2, p
-						margin: 0
-					.description
-						font-size: 1.1em
-					&.decorator
-						&::before
-					    content: ""
-					    display: inline-table
-					    width: 10px
-					    height: 88px
-					    background-image: url("../img/decorator-banner.png")
-					    position: absolute
-					    left: 0
-					    margin-top: 12px
-				&-img
-					float: right
-					margin-top: 35px
+				h2, p
+					margin: 0
+				.description
+					font-size: 1.1em
+				&.decorator
+					&::before
+				    content: ""
+				    display: inline-table
+				    width: 10px
+				    height: 88px
+				    background-image: url("../img/decorator-banner.png")
+				    position: absolute
+				    left: 0
+				    margin-top: 12px
+			&-img
+				float: right
+				margin-top: 35px
 
 .presentation
 	.flex
@@ -548,6 +562,7 @@ input, textarea, button
 				font-family: "Magistral"
 				margin: 0
 				padding-top: 0
+				padding-right: 0
 				font-size: 1em
 				margin-bottom: 0
 			.title
@@ -563,19 +578,23 @@ input, textarea, button
 			display: inline-table
 			width: 50%
 			min-width: 50%
-			img
-				border-radius: 50%
-				width: 125px
-				height: 125px
-				float: left
-			.description
-				font-family: "DINPro Regular"
-				vertical-align: middle
-				display: table-cell
-				line-height: normal
-				font-size: 18px
-				color: #24211e
-				max-width: 290px
+			a
+				display: inline-table
+				width: 100%
+				img
+					border-radius: 50%
+					width: 125px
+					height: 125px
+					float: left
+				.description
+					font-family: "DINPro Regular"
+					vertical-align: middle
+					display: table-cell
+					line-height: normal
+					font-size: 18px
+					color: #24211e
+					max-width: 290px
+					padding-right: 0
 
 #contacts-page
 	.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12,
@@ -627,119 +646,117 @@ input, textarea, button
 			display: inline-table
 			margin: 20px 9px
 
-#product-page
-	#first
-		padding-top: 55px
-		padding-bottom: 28px
-		.container,
-		.col-lg-12
-			overflow: hidden
-		.product-images
-			display: inline-table
-			float: left
-			width: 22%
-			margin-right: 70px
-			.small-preview
-				display: -webkit-flex
-				display: -ms-flex
-				display: flex
-				justify-content: space-between
-				margin-top: 10px
-			img
-				height: 75px
-				border: solid 1px #f6f3e4
-			.big-preview
-				border: solid 5px #f6f3e4
-				width: 100%
-				height: auto
-		.product-info
-			width: 83%
-			box-sizing: border-box
-			padding-top: 20px
-			color: #5d503c
-			.prod-title
-				font-size: 22px
-				font-family: "DINPro Bold"
-				line-height: normal
-				margin: 0
-			.small-order-descr
-				margin-top: 10px
-				span
-					&:not(:first-child)
-						margin: 0 15px
-					&:first-child
-						margin-right: 15px
-			.prod-descr
-				font-size: 1em
-				font-family: "DINPro Regular"
-				line-height: normal
-				color: #24211e
-			.prod-info-popups
-				margin-top: 40px
-				margin-bottom: 20px
-				border-bottom: solid 1px
-				border-top: solid 1px
-				border-color: #edeff1
-				padding: 15px
-				.item
-					width: 50%
-					padding: 0 4px
-					text-align: center
-					&:first-child
-						border-right: solid 1px #edeff1
-					a
-						color: $accent
-						font-family: "DINPro Regular"
-						font-size: 1em
-			.action
-				&.flex
-					justify-content: space-between
-				.item
-					margin: 10px 30px
-					button
-						height: 50px
-						width: 185px
-						background-color: $accent
-						color: #fff
-						border: none
-						border-radius: 25px
-	#charts
-		padding-bottom: 45px
-		background-image: url("../img/pattern50.png")
-		h2
-			font-size: 24px
-			color: #5d503c
-		.table
-			.flex
-				&.horizontal-border
-					border-bottom: solid 1px $accent
-				.item
-					width: 68%
-					padding-left: 20px
-					&:first-child
-						width: 32%
-						border-right: solid 1px $accent
-					&:last-child
-						// padding-left: 30px
 
-#single-newspage
-	#single-news
-		padding-top: 45px
-		.forward
-			color: $accent
+#first
+	padding-top: 55px
+	padding-bottom: 28px
+	.container,
+	.col-lg-12
+		overflow: hidden
+	.product-images
+		display: inline-table
+		float: left
+		width: 22%
+		margin-right: 70px
+		.small-preview
+			display: -webkit-flex
+			display: -ms-flex
+			display: flex
+			justify-content: space-between
+			margin-top: 10px
+		img
+			width: 75px
+			border: solid 1px #f6f3e4
+			height: 100%
+		.big-preview
+			border: solid 5px #f6f3e4
+			width: 100%
+			height: auto
+	.product-info
+		width: 83%
+		box-sizing: border-box
+		padding-top: 20px
+		color: #5d503c
+		.prod-title
+			font-size: 22px
+			font-family: "DINPro Bold"
+			line-height: normal
+			margin: 0
+		.small-order-descr
+			margin-top: 10px
+			span
+				&:not(:first-child)
+					margin: 0 15px
+				&:first-child
+					margin-right: 15px
+		.prod-descr
 			font-size: 1em
-			display: table
-			margin: 0 auto
-			font-family: "Magistral"
-		.post-content
-			img
-				margin: auto
-				margin-bottom: 20px
-			&-text
-				&::before
-					content: ""
-					width: 17px
-					height: 3px
-					float: left
-					display: table
+			font-family: "DINPro Regular"
+			line-height: normal
+			color: #24211e
+		.prod-info-popups
+			margin-top: 40px
+			margin-bottom: 20px
+			border-bottom: solid 1px
+			border-top: solid 1px
+			border-color: #edeff1
+			padding: 15px
+			.item
+				width: 50%
+				padding: 0 4px
+				text-align: center
+				&:first-child
+					border-right: solid 1px #edeff1
+				a
+					color: $accent
+					font-family: "DINPro Regular"
+					font-size: 1em
+		.action
+			&.flex
+				justify-content: space-between
+			.item
+				margin: 10px 30px
+				button
+					height: 50px
+					width: 185px
+					background-color: $accent
+					color: #fff
+					border: none
+					border-radius: 25px
+#charts
+	padding-bottom: 45px
+	background-image: url("../img/pattern50.png")
+	h2
+		font-size: 24px
+		color: #5d503c
+	.table
+		.flex
+			&.horizontal-border
+				border-bottom: solid 1px $accent
+			.item
+				width: 68%
+				padding-left: 20px
+				&:first-child
+					width: 32%
+					border-right: solid 1px $accent
+#single-news
+	padding-top: 45px
+	a.forward
+		color: $accent
+		font-size: 1em
+		display: table
+		margin: 0 auto
+		font-family: "Magistral"
+	.post-content
+		img
+			margin: auto
+			margin-bottom: 20px
+		p
+			color: initial
+			&::before
+				content: ""
+				width: 17px
+				height: 3px
+				float: left
+				display: table
 @import "media" // Всегда в конце
