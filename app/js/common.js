@@ -21,16 +21,16 @@ window.onload = function(){
       var gallery_ID = $(this).attr('data-mfp-src');
       console.log(gallery_ID);
       switch(gallery_ID) {
-        case "#restor-eidel":
-          $(".re-item")[0].click();
+        case "#popup1":
+          $(".popup1-item")[0].click();
           break;
 
-        case "#cafe-mont":
-          $(".cm-item")[0].click();
+        case "#popup2":
+          $(".popup2-item")[0].click();
           break;
 
-        case "#restor-forest":
-          $(".rf-item")[0].click();
+        case "#popup3":
+          $(".popup3-item")[0].click();
           break;
 
       }

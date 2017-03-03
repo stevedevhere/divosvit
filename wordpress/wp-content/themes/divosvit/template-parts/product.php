@@ -15,12 +15,7 @@
 			<div class="col-lg-6 popup-content">
 				<p class="popup-title"><?php the_field('pl-title', 5); ?></p>
 				<p class="description"><?php the_field('pl-description', 5) ?></p>
-				<form action="#" id="form-letter">
-					<input type="text" name="name" placeholder="Ваше ім’я" required>
-					<input type="tel" name="tel" class="right" placeholder="Номер телефону" required>
-					<textarea name="message" placeholder="Повідомлення" required></textarea>
-					<button type="submit" name="submit">Відправити</button>
-				</form>
+				<?=do_shortcode('[contact-form-7 id="282" title="product-contact-form"]');?>
 			</div>
 		</div>
 	</div>
@@ -78,14 +73,29 @@
 				</div>
 				<p class="prod-descr"><?php the_field('descr'); ?></p>
 				<div class="prod-info-popups flex">
-					<div class="item"><a href="#" class="popup-PD-info-opener" data-mfp-src="#popup-PD-info"><?php the_field('pd-title-opener', 5); ?></a></div>
-					<div class="item"><a href="#" class="popup-schedule-opener" data-mfp-src="#popup-schedule"><?php the_field('psc-title-opener', 5); ?></a></div>
+					<div class="item">
+						<a href="#" class="popup-PD-info-opener"
+							 data-mfp-src="#popup-PD-info">
+							 <?php the_field('pd-title-opener', 5); ?>
+						</a>
+					</div>
+					<div class="item">
+						<a href="#" class="popup-schedule-opener"
+							 data-mfp-src="#popup-schedule">
+							 <?php the_field('psc-title-opener', 5); ?>
+						</a>
+					</div>
 				</div>
 				<div class="action flex">
 					<div class="item">
-						<p class="description"><?php the_field('buy-descr'); ?></p>
+						<p class="description"><?php the_field('buy-descr', 5); ?></p>
 					</div>
-					<div class="item"><button class="popup-letter-opener" data-mfp-src="#popup-letter"><?=get_field('btn-write-opener'); ?></button></div>
+					<div class="item">
+						<button class="popup-letter-opener"
+										data-mfp-src="#popup-letter">
+										<?=get_field('btn-write-opener', 5); ?>
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>

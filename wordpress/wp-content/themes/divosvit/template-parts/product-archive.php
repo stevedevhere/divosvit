@@ -13,7 +13,14 @@
  		<div class="row">
  			<div class="flex products">
  				<?php
- 				$query = new WP_Query('post_type=product&nopaging=1'); // указываем категорию 9 и выключаем разбиение на страницы (пагинацию)
+        $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+ 				$query = new WP_Query(
+          array(
+            'post_type' => 'product',
+            'showposts' => 12,
+            'paged' => $paged
+          )
+        );
  				if( $query->have_posts() ){
  					while( $query->have_posts() ){ $query->the_post();
  					?>
@@ -25,21 +32,14 @@
  					</div>
  					<?php
  					}
- 					wp_reset_postdata(); // сбрасываем переменную $post
+        	wp_reset_postdata(); // сбрасываем переменную $post
  				}
  				?>
 
- 			</div>
 
- 			<div class="pagination"> <?php // TODO: product pagination! ?>
- 				<a href="#">1</a>
- 				<a href="#">2</a>
- 				<a href="#">3</a>
- 				<p class="sep">...</p>
- 				<a href="#">6</a>
- 				<a href="#">7</a>
- 				<a href="#">8</a>
+
  			</div>
+ 			<?php include_once('products-pagination.php'); ?>
  		</div>
  	</div>
  </section>

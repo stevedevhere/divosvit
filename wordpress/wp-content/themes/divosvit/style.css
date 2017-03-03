@@ -20,6 +20,13 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 */
 
+.wpcf7-form-control-wrap {
+  display: inline;
+}
+.wpcf7-not-valid-tip {
+  display: none !important;
+}
+
 .cat-img {
   width: 470px;
 }

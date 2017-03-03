@@ -1,3 +1,5 @@
+<?php $queried_object = get_queried_object(); ?>
+
 <section class="jbtron">
  <div class="container">
 	 <div class="content">
@@ -7,7 +9,8 @@
 				 <?=get_category_by_slug($cat_name)->description; ?>
 			 </p>
 		 </div>
-		 <img src="<?php the_field('cat_thumb_image'); ?>" class="cat-img" alt="">
+
+     <img src="<?php the_field('cat_thumb_image', $queried_object); ?>" class="cat-img" alt="">
 	 </div>
  </div>
 </section>

@@ -1,7 +1,7 @@
 <?php
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
-$query = new WP_Query('posts_per_page=1&post_type=product&category_name='.$cat_name.'&paged=' . $paged); // указываем категорию 9 и выключаем разбиение на страницы (пагинацию)
+$query = new WP_Query('posts_per_page=12&post_type=product&category_name='.$cat_name.'&paged=' . $paged); // указываем категорию 9 и выключаем разбиение на страницы (пагинацию)
 if( $query->have_posts() ){
   while( $query->have_posts() ){ $query->the_post(); ?>
   <div class="item">

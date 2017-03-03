@@ -147,3 +147,15 @@ add_filter('term_description', 'clear_term_description');
 function clear_term_description($value){
 	return @preg_replace('@<p>@+@</p>@', '', $value);
 }
+
+function set_post_type_for_archive_wpse_109213($qry) {
+  if ($qry->is_archive()) {
+    $post_type = $qry->get('post_type');
+    if (empty($post_type)) {
+      $post_type = array('post');
+    }
+    $post_type = 'product';
+    $qry->set('post_type',  $post_type);
+  }
+}
+add_action('pre_get_posts','set_post_type_for_archive_wpse_109213');

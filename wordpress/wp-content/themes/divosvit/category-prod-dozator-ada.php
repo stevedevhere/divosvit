@@ -8,6 +8,7 @@
  */
 
 get_header();
+
   $cat_name = "prod-dozator-ada";
 ?>
 
@@ -19,16 +20,8 @@ get_header();
  			<div class="flex products">
  				<?php require_once('cat-content.php'); ?>
  			</div>
-      <?php the_post_navigation(); ?>
- 			<div class="pagination"> <?php // TODO: products pagination!! ?>
- 				<a href="#">1</a>
- 				<a href="#">2</a>
- 				<a href="#">3</a>
- 				<p class="sep">...</p>
- 				<a href="#">6</a>
- 				<a href="#">7</a>
- 				<a href="#">8</a>
- 			</div>
+
+ 			<?php include_once('products-pagination.php'); ?>
  		</div>
  	</div>
  </section>
