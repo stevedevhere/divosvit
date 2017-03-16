@@ -39,8 +39,6 @@
 	</div>
 </div>
 
-
-
 <section id="first">
 	<div class="container">
 		<div class="row">

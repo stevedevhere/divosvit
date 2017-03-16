@@ -8,8 +8,8 @@
  */
 
 get_header();
-
-  $cat_name = "prod-dozator-ada";
+$queried_object = get_queried_object();
+$cat_name = $queried_object->category_nicename;
 ?>
 
 <?php require_once('jbtron.php'); ?>
@@ -21,7 +21,7 @@ get_header();
  				<?php require_once('cat-content.php'); ?>
  			</div>
 
- 			<?php include_once('products-pagination.php'); ?>
+      <?php include_once('products-pagination.php'); ?>
  		</div>
  	</div>
  </section>

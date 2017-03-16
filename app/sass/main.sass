@@ -29,10 +29,6 @@ body input:required:valid,
 body textarea:required:valid
 	color: #000
 
-html, body
-	height: 100%
-	overflow-y: auto
-
 body
 	font-size: 16px
 	min-width: 320px
@@ -44,6 +40,8 @@ body
 h2
 	font-family: "Magistral"
 	font-weight: normal
+	&.pt0
+		padding-top: 0 !important
 .img-responsive
 	display: block
 	max-width: 100%
@@ -53,6 +51,8 @@ ul
 	padding: 0
 a, a:hover, a:active, a:visited
 	text-decoration: none !important
+	color: initial
+
 ul li
 	list-style: none
 	position: relative
@@ -94,7 +94,7 @@ ul li
 	display: block !important
 
 header
-	border-bottom: solid 1px #f2f3f5
+
 	#contacts
 		background-image: url("../img/pattern50.png")
 		border-bottom: solid 1px #f2f3f5
@@ -123,39 +123,58 @@ header
 						&:not(:first-child)
 							padding-left: 22px
 	#navigation
-		#logo
-			float: left
-			display: table
-			padding: 27px 0
-		ul
-			margin: 0
-			display: table
-			float: left
-			li
-				display: inline-flex
+		border-bottom: solid 1px #f2f3f5
+		background-color: #fff
+		&.sticky
+			position: fixed
+			width: 100%
+			left: 0
+			top: 0
+			z-index: 100
+			border-top: 0
+		.container.fix
+			width: 92%
+			#logo
+				float: left
+				display: table
+				padding: 27px 0
+				margin-right: 25px
+			ul
+				margin: 0
+				display: table
+				float: left
+				li
+					display: inline-flex
+					a
+						font-family: "Magistral"
+						font-size: 1em
+						color: #5d503c
+						padding-right: 15px
+						padding-left: 15px
+					&:not(.current-menu-item):hover a
+						color: #884a30
+					&.current-menu-item
+						a
+							color: #884a30
+							border-bottom: solid 1px #f9f6ed
+							font-weight: 700
+				.dropdown
+					&:hover
+						a
+							color: white
+						ul
+							position: absolute
+			#locale
+				float: right
+				padding: 55px 0
 				a
 					font-family: "Magistral"
-					font-size: 1em
 					color: #5d503c
-					&:hover
-						color: #884a30
-			.dropdown
-				&:hover
-					a
-						color: white
-					ul
-						position: absolute
-		#locale
-			float: right
-			padding: 55px 0
-			a
-				font-family: "Magistral"
-				color: #5d503c
-				&:not(:first-child)
-					padding-left: 1em
-				&.active
-					font-weight: bold
-					color: $accent
+					&:not(:first-child)
+						padding-left: 1em
+					&.active
+						font-weight: bold
+						color: $accent
 
 .description
 	font-family: "DINPro Regular"
@@ -192,6 +211,16 @@ section
 .flex.products
 	justify-content: space-between
 	flex-flow: wrap
+	&.catalogs
+		.item
+			box-shadow: 0 5px 15px rgba(0,0,0,0.1)
+			border: solid 5px transparent
+			height: 310px
+			&:hover
+		    border: solid 5px #f0f0f0
+			img
+				padding: 10px
+				padding-bottom: 0
 	.item
 		transition: 0.05s
 		width: 270px
@@ -596,42 +625,32 @@ input, textarea, button
 					max-width: 290px
 					padding-right: 0
 
-#contacts-page
-	.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12,
-	.col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5,
-	.col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9,
-	.col-md-1, .col-md-10, .col-md-11, .col-md-12,
-	.col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6,
-	.col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11,
-	.col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6,
-	.col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11,
-	.col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6,
-	.col-xs-7, .col-xs-8, .col-xs-9
-		padding: 0 !important
-	#map-container
-		position: relative
-		#text-info
-			top: 140px
-			left: 10%
-			z-index: 10
-			background-color: #fff
-			border-radius: 10px
-			padding: 35px
-			min-width: 380px
-			display: table
-			position: absolute
-			.title
-				font-family: "DINPro Regular"
-				font-weight: bold
-				margin: 0
-				&:not(:first-child)
-					padding-top: 13px
-			.description
-				margin: 0
-		#map
-			width: 100%
-			height: 100vh
-			display: block
+.col-lg-6.letter-x
+	padding: 0 !important
+#map-container
+	position: relative
+	#text-info
+		top: 140px
+		left: 10%
+		z-index: 10
+		background-color: #fff
+		border-radius: 10px
+		padding: 35px
+		min-width: 380px
+		display: table
+		position: absolute
+		.title
+			font-family: "DINPro Regular"
+			font-weight: bold
+			margin: 0
+			&:not(:first-child)
+				padding-top: 13px
+		.description
+			margin: 0
+	#map
+		width: 100%
+		height: 100vh
+		display: block
 
 #catalog
 	a

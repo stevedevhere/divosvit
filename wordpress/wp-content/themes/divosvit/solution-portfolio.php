@@ -14,7 +14,7 @@
               $count = $count + count($img['url']);
             }
           ?>
-          <p class="description"><?=$count?> фото</p>
+          <p class="description"><?=$count?> <?=get_field('text-photo', 5);?></p>
         </a>
       </div>
       <?php

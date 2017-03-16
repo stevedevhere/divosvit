@@ -2,6 +2,7 @@
 <?php get_header(); ?>
 
 <div class="banner">
+	<a href="<?php the_field('banner-link'); ?>" target="_blank">
 	<section class="container flex">
 		<div class="item left">
 			<div class="text decorator">
@@ -15,6 +16,7 @@
 			<img class="item-img" src="<?=get_template_directory_uri(); ?>/img/banner-image.png" alt="">
 		</div>
 	</section>
+	</a>
 </div>
 
 <section class="presentation">

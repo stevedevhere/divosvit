@@ -19,6 +19,20 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 */
+/*
+a {
+  color: initial !important;
+}*/
+body, html {
+  margin: 0 !important;
+  height: 100%;
+}
+.cbalink {
+  display: none !important;
+}
+header #navigation .container nav ul .current-menu-item a {
+  color: red;
+}
 
 .wpcf7-form-control-wrap {
   display: inline;

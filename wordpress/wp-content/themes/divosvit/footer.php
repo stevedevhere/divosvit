@@ -20,14 +20,14 @@
 		<div class="flex">
 			<div class="item">
 				<h2><?php the_field('contacts-title', 5); ?>:</h2>
-				<a class="no-locale" href="tel:">+380 - 32 - 240 - 51 - 04</a>
-				<a class="no-locale" href="tel:">+380 - 67 - 676 - 61 - 67</a>
-				<a class="no-locale" href="mailto:">bs@dyvosvit.biz</a>
+				<a class="no-locale" href="tel:<?php the_field('tel-1', 52); ?>"><?php the_field('tel-1', 52); ?></a>
+				<a class="no-locale" href="tel:<?php the_field('tel-2', 52); ?>"><?php the_field('tel-2', 52); ?></a>
+				<a class="no-locale" href="mailto:"><?php the_field('email', 52); ?></a>
 			</div>
 			<div class="item">
 				<h2 class="hide">hidden</h2>
 				<ul>
-						<li><a href="<?php site_url(); ?>/about"><?php the_field('abt-title', 5);	 ?></a></li>
+					<li><a href="<?php site_url(); ?>/about"><?php the_field('abt-title', 5);	 ?></a></li>
 					<li><a href="<?php site_url(); ?>/news"><?php the_field('x-news-title', 5); ?></a></li>
 				</ul>
 			</div>

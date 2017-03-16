@@ -49,11 +49,11 @@
 					<div class="left">
 						<div class="item">
 							<img src="<?=get_template_directory_uri();?>/img/icon-inbox.png" alt="icon inbox">
-							<a class="no-locale" href="mailto:bs@divosvit.biz">bs@divosvit.biz</a>
+							<a class="no-locale" href="mailto:<?php the_field('email', 52); ?>"><?php the_field('email', 52); ?></a>
 						</div>
 						<div class="item">
 							<img src="<?=get_template_directory_uri();?>/img/icon-phone.png" alt="con phone">
-							<a class="no-locale" href="tel:+380322405104">+380 - 32 - 240 - 51 - 04</a>
+							<a class="no-locale" href="tel:<?php the_field('tel-1', 52); ?>"><?php the_field('tel-1', 52); ?></a>
 						</div>
 					</div>
 					<div class="right">
@@ -66,19 +66,19 @@
 					</div>
 				</div>
 			</div>
-			<div id="navigation" class="container">
-
-				<nav>
-					<div id="logo">
-						<a href="<?=site_url(); ?>/"><img src="<?=get_template_directory_uri();?>/img/logo.png" alt="Logo"></a>
-					</div>
-					<?php wp_nav_menu(); ?>
-
-					<div id="locale">
-						<a class="no-locale ua" href="/">Ua</a>
-						<a class="no-locale ru" href="/ru">Rus</a>
-						<a class="no-locale en" href="/en">Eng</a>
-					</div>
-				</nav>
+			<div id="navigation">
+				<div class="container fix"> 
+					<nav>
+						<div id="logo">
+							<a href="<?=site_url(); ?>/"><img src="<?=get_template_directory_uri();?>/img/logo.png" alt="Logo"></a>
+						</div>
+						<?php wp_nav_menu(); ?>
+						<div id="locale">
+							<a class="no-locale ua" href="/">Ua</a>
+							<a class="no-locale ru" href="/ru">Rus</a>
+							<a class="no-locale en" href="/en">Eng</a>
+						</div>
+					</nav>
+				</div>
 			</div>
 		</header>

@@ -35,3 +35,24 @@ function hrefLocalize(locale) {
     }
   });
 }
+
+
+
+// Navigation sticky Start
+var nav = $("#navigation");
+var stickyNavTop = nav.offset().top;
+function stickyNav(){
+  var scrollTop = $("body").scrollTop();
+  if (scrollTop > stickyNavTop) {
+    nav.addClass('sticky');
+    $(nav).parent().css("marginBottom", $(nav).height());
+  } else {
+    nav.removeClass('sticky');
+    $(nav).parent().css("marginBottom", 0);
+  }
+};
+stickyNav();
+$(window).on("scroll", function() {
+  stickyNav();
+});
+// Navigation sticky End

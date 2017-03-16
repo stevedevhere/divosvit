@@ -1,7 +1,7 @@
 window.onload = function(){
 
 
-  var contacts_page = document.getElementById("contacts-page");
+  var map_need = document.getElementById("map");
   var mfp_use = document.querySelector(".mfp-hide");
 
   if (mfp_use) {
@@ -51,7 +51,7 @@ window.onload = function(){
 
   }
 
-  if(contacts_page) {
+  if(map_need) {
     var LatLng = {lat: 49.8142883, lng: 24.0590634}; //49.8142883,24.0590634
     var map = new google.maps.Map(document.getElementById('map'), {
       center: LatLng,

@@ -1,5 +1,12 @@
 <section id="news" class="no-bg">
-	<h2><?php the_field('news-title'); ?></h2>
+	<h2>
+		<?php
+		if(!empty(get_field('news-title'))) {
+			the_field('news-title');
+		} else {
+			the_field('news-title', 48);
+		}
+	?></h2>
 	<div class="container">
 		<div class="flex">
 <?php	$recent_posts = wp_get_recent_posts(['numberposts' => 2, 'post_type' => 'post', 'exclude' => get_the_ID()]);
